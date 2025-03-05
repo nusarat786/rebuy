@@ -1,0 +1,15 @@
+{
+    "data": [
+      {
+        "id": 1000001,
+        "name": "India",
+        "type": "COUNTRY",
+        "longitude": 78.9629,
+        "latitude": 20.5937
+      }
+    ],
+    "metadata": {
+  
+    },
+    "empty": false
+  }

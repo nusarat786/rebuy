@@ -1,0 +1,296 @@
+{
+    "data": [
+      {
+        "id": 2001160,
+        "name": "Kerala",
+        "type": "STATE",
+        "longitude": 76.27108,
+        "latitude": 10.85052,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001173,
+        "name": "Tamil Nadu",
+        "type": "STATE",
+        "longitude": 78.65689,
+        "latitude": 11.12712,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001170,
+        "name": "Punjab",
+        "type": "STATE",
+        "longitude": 75.98,
+        "latitude": 31.51997,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001163,
+        "name": "Maharashtra",
+        "type": "STATE",
+        "longitude": 75.55298,
+        "latitude": 19.60119,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001159,
+        "name": "Karnataka",
+        "type": "STATE",
+        "longitude": 75.71389,
+        "latitude": 15.31728,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001154,
+        "name": "Gujarat",
+        "type": "STATE",
+        "longitude": 72.13623,
+        "latitude": 22.30943,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001152,
+        "name": "Delhi",
+        "type": "STATE",
+        "longitude": 77.23,
+        "latitude": 28.66999,
+        "parentId": 1000001
+      },
+      {
+        "id": 2007599,
+        "name": "Telangana",
+        "type": "STATE",
+        "longitude": 79.20882,
+        "latitude": 17.12318,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001145,
+        "name": "Andhra Pradesh",
+        "type": "STATE",
+        "longitude": 78.57003,
+        "latitude": 14.75043,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001155,
+        "name": "Haryana",
+        "type": "STATE",
+        "longitude": 76.43189,
+        "latitude": 29.23848,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001176,
+        "name": "Uttar Pradesh",
+        "type": "STATE",
+        "longitude": 79.82666,
+        "latitude": 28.20761,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001171,
+        "name": "Rajasthan",
+        "type": "STATE",
+        "longitude": 73.43262,
+        "latitude": 27.39128,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001177,
+        "name": "West Bengal",
+        "type": "STATE",
+        "longitude": 87.7478,
+        "latitude": 22.97862,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001147,
+        "name": "Assam",
+        "type": "STATE",
+        "longitude": 92.53784,
+        "latitude": 26.24416,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001162,
+        "name": "Madhya Pradesh",
+        "type": "STATE",
+        "longitude": 77.948,
+        "latitude": 23.47332,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001178,
+        "name": "Chhattisgarh",
+        "type": "STATE",
+        "longitude": 82.15999,
+        "latitude": 22.09042,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001168,
+        "name": "Odisha",
+        "type": "STATE",
+        "longitude": 84.80347,
+        "latitude": 20.94092,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001153,
+        "name": "Goa",
+        "type": "STATE",
+        "longitude": 73.818,
+        "latitude": 15.492,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001148,
+        "name": "Bihar",
+        "type": "STATE",
+        "longitude": 87.47997,
+        "latitude": 25.78541,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001158,
+        "name": "Jharkhand",
+        "type": "STATE",
+        "longitude": 86.41999,
+        "latitude": 23.80039,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001149,
+        "name": "Chandigarh",
+        "type": "STATE",
+        "longitude": 76.78001,
+        "latitude": 30.72,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001169,
+        "name": "Pondicherry",
+        "type": "STATE",
+        "longitude": 79.83,
+        "latitude": 11.93499,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001175,
+        "name": "Uttaranchal",
+        "type": "STATE",
+        "longitude": 78.05001,
+        "latitude": 30.32041,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001157,
+        "name": "Jammu & Kashmir",
+        "type": "STATE",
+        "longitude": 74.46666,
+        "latitude": 34.29996,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001156,
+        "name": "Himachal Pradesh",
+        "type": "STATE",
+        "longitude": 77.57117,
+        "latitude": 32.08421,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001164,
+        "name": "Manipur",
+        "type": "STATE",
+        "longitude": 93.95002,
+        "latitude": 24.79997,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001165,
+        "name": "Meghalaya",
+        "type": "STATE",
+        "longitude": 91.88001,
+        "latitude": 25.57049,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001174,
+        "name": "Tripura",
+        "type": "STATE",
+        "longitude": 91.74683,
+        "latitude": 23.74513,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001167,
+        "name": "Nagaland",
+        "type": "STATE",
+        "longitude": 94.11657,
+        "latitude": 25.667,
+        "parentId": 1000001
+      },
+      {
+        "id": 2007598,
+        "name": "Andaman & Nicobar Islands",
+        "type": "STATE",
+        "longitude": 92.73598,
+        "latitude": 11.66703,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001146,
+        "name": "Arunachal Pradesh",
+        "type": "STATE",
+        "longitude": 93.6166,
+        "latitude": 27.1004,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001172,
+        "name": "Sikkim",
+        "type": "STATE",
+        "longitude": 88.61665,
+        "latitude": 27.33333,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001150,
+        "name": "Dadra & Nagar Haveli",
+        "type": "STATE",
+        "longitude": 73.01662,
+        "latitude": 20.26658,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001151,
+        "name": "Daman & Diu",
+        "type": "STATE",
+        "longitude": 72.8397,
+        "latitude": 20.4283,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001166,
+        "name": "Mizoram",
+        "type": "STATE",
+        "longitude": 92.72001,
+        "latitude": 23.7104,
+        "parentId": 1000001
+      },
+      {
+        "id": 2001161,
+        "name": "Lakshadweep",
+        "type": "STATE",
+        "longitude": 72.63687,
+        "latitude": 10.56257,
+        "parentId": 1000001
+      }
+    ],
+    "metadata": {
+  
+    },
+    "empty": false
+  }

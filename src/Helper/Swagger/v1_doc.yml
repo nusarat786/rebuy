@@ -1,0 +1,1222 @@
+openapi: 3.0.0
+info:
+  title: olx
+  version: 1.0.0
+servers:
+  - url: http://localhost:4002
+  - url: https://www.olx.in
+  - url: http://localhost:5000
+tags:
+  - name: User
+  - name: Admin Copy
+  - name: Category
+  - name: Product
+  - name: Location
+  - name: Image upload test
+paths:
+  /uploadTest2:
+    post:
+      tags:
+        - User
+      summary: New Request Copy 2
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/register:
+    post:
+      tags:
+        - User
+      summary: registerUser
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Okk
+                email:
+                  type: string
+                  example: nusarathaveliwalaaaaaaaa@gmail.com
+                password:
+                  type: string
+                  example: Aa#12345
+                phone:
+                  type: integer
+                  example: '9586213296'
+                profilePicture:
+                  type: string
+                  format: binary
+                lastName:
+                  type: string
+                  example: Nusarat
+                phoneCode:
+                  type: number
+                  example: '+91'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/update:
+    post:
+      tags:
+        - User
+      summary: editUser
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Okk Test
+                email:
+                  type: string
+                  example: nusarathaveliwala@gmail.com
+                password:
+                  type: string
+                  example: Aa#12345
+                phone:
+                  type: integer
+                  example: '9586213283'
+                profilePicture:
+                  type: string
+                  format: binary
+                lastName:
+                  type: string
+                  example: Nusarat Test
+                phoneCode:
+                  type: number
+                  example: '+93'
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODkzMzdmNGQ0ODk2MmJkZGQ0Yjk0YiIsImVtYWlsIjoibnVzYXJhdGhhdmVsaXdhbGFAZ21haWwuY29tIiwidXNlclR5cGUiOiJ1c2VyIiwiaXBBZHJlc3MiOiI6OjEiLCJpYXQiOjE3MzcwNDQ4OTgsImV4cCI6MTczNzA0ODQ5OH0.cUtjHlzgcJzpL42gYHlO1JjzNZog2Rkn8frhKS0yXkA
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/login:
+    post:
+      tags:
+        - User
+      summary: login User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: nusarathaveliwala@gmail.com
+                password: Aa#12345
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/loginWithIP:
+    post:
+      tags:
+        - User
+      summary: login User Ip
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: nusarathaveliwala@gmail.com
+                password: Aa#123456789
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/forgetPassword:
+    get:
+      tags:
+        - User
+      summary: forget password
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/resetPassword:
+    post:
+      tags:
+        - User
+      summary: reset password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: nusarathaveliwala@gmail.com
+                password: Aa#123456789
+                otp: '503860'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/test:
+    post:
+      tags:
+        - User
+      summary: test auth
+      requestBody:
+        content: {}
+      parameters:
+        - name: authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Barer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODkzMzdmNGQ0ODk2MmJkZGQ0Yjk0YiIsImVtYWlsIjoibnVzYXJhdGhhdmVsaXdhbGFAZ21haWwuY29tIiwidXNlclR5cGUiOiJ1c2VyIiwiaXBBZHJlc3MiOiI6OjEiLCJpYXQiOjE3MzcwNDYwMzgsImV4cCI6MTczNzA0OTYzOH0.kLHsnNNBqgw2QzENaxGGu1XyM57VReiGpDtc3X3ZPvI
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/postAdmin/:
+    post:
+      tags:
+        - Admin Copy
+      summary: postAdmin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                adminName: test
+                adminEmail: testf@bozu.us
+                password: Bozu#12345
+                role: SUPERADMIN
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/getUserById/67839a2915fe4f6138727e0d:
+    get:
+      tags:
+        - Admin Copy
+      summary: get user by id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/getAllUsersWithPaginationSorting:
+    post:
+      tags:
+        - Admin Copy
+      summary: get all user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                page: 2
+                limit: 10
+                sortField: email
+                sortOrder: ASC
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/searchUser:
+    post:
+      tags:
+        - Admin Copy
+      summary: search by field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                search: nusarat
+                searchField: email
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/updateUserStatus:
+    post:
+      tags:
+        - Admin Copy
+      summary: block user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                userId: 678cd6c6114c2b63668b01e4
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/getAdminById/678f514aa2d617e0e36c97ed:
+    get:
+      tags:
+        - Admin Copy
+      summary: getAdmin By Id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc4ZTQ4NjQzODU1MjVkYWM4ODI5ODU0IiwiYWRtaW5OYW1lIjoibnVzYXJhdCIsInJvbGUiOiJTVVBFUkFETUlOIiwiaXBBZGRyZXNzIjoiOjoxIiwiaWF0IjoxNzM3NDMzMzY4LCJleHAiOjE3NDAwMjUzNjh9.LbxTO7jublolc4VBEnqSQHr4xJt8IQaAwIrUM0qjz6A
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/getAdmin:
+    get:
+      tags:
+        - Category
+      summary: getAdmin with limit offset and sorting
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc4ZTQ4NjQzODU1MjVkYWM4ODI5ODU0IiwiYWRtaW5OYW1lIjoibnVzYXJhdCIsInJvbGUiOiJTVVBFUkFETUlOIiwiaXBBZGRyZXNzIjoiOjoxIiwiaWF0IjoxNzM3NDMzMzY4LCJleHAiOjE3NDAwMjUzNjh9.LbxTO7jublolc4VBEnqSQHr4xJt8IQaAwIrUM0qjz6A
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '23'
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+          example: desc
+        - name: sortField
+          in: query
+          schema:
+            type: string
+          example: adminEmail
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/deleteAdminById/678f514aa2d617e0e36c97ed:
+    delete:
+      tags:
+        - Admin Copy
+      summary: deleteAdmin By Id Copy
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc4ZTQ4NjQzODU1MjVkYWM4ODI5ODU0IiwiYWRtaW5OYW1lIjoibnVzYXJhdCIsInJvbGUiOiJTVVBFUkFETUlOIiwiaXBBZGRyZXNzIjoiOjoxIiwiaWF0IjoxNzM3NDMzMzY4LCJleHAiOjE3NDAwMjUzNjh9.LbxTO7jublolc4VBEnqSQHr4xJt8IQaAwIrUM0qjz6A
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/putAdmin/678f2bb278d956668dd595f6:
+    put:
+      tags:
+        - Admin Copy
+      summary: putAdmin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                password: Aa#123456789
+                adminName: nusarat
+                adminEmail: nusarathaveliwala@gmail.com
+                role: SUPERADMIN
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzY1ODU3MCwiZXhwIjoxNzQwMjUwNTcwfQ.LvMHhPeL7aALH9gwHuqJff665uz0QA7jAeQ57DpkE8g
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/postDefaultAdmin/:
+    post:
+      tags:
+        - Admin Copy
+      summary: postAdmin Default
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc4ZTQ4NjQzODU1MjVkYWM4ODI5ODU0IiwiYWRtaW5OYW1lIjoibnVzYXJhdCIsInJvbGUiOiJTVVBFUkFETUlOIiwiaXBBZGRyZXNzIjoiOjoxIiwiaWF0IjoxNzM3NDMzMzY4LCJleHAiOjE3NDAwMjUzNjh9.LbxTO7jublolc4VBEnqSQHr4xJt8IQaAwIrUM0qjz6A
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/adminLogin:
+    post:
+      tags:
+        - Admin Copy
+      summary: admin Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                adminEmail: olx-nusarat@gmail.com
+                password: Nusu12345@
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/postCategory:
+    post:
+      tags:
+        - Category
+      summary: post Category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Check
+                description: House product
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Location
+      summary: get location
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/putCategory/679528421e9b12294cd2c138:
+    put:
+      tags:
+        - Category
+      summary: put Category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: YOKL
+                description: House product
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/postSubCategory/6795cf90c0495f5d62da383c:
+    post:
+      tags:
+        - Category
+      summary: post Sub Category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: '56'
+                attributes:
+                  - name: Brand
+                    required: true
+                    type: string
+                  - name: RAM
+                    required: true
+                    type: number
+                  - name: Color
+                    required: false
+                    type: string
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/putSubCategory/679546fb0cf67601daba66e2:
+    put:
+      tags:
+        - Category
+      summary: put Sub Category Based on SUB ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: '56'
+                attributes:
+                  - name: Brand
+                    required: true
+                    type: string
+                  - name: RAM
+                    required: true
+                    type: number
+                  - name: Color
+                    required: false
+                    type: string
+                  - name: Some
+                    required: false
+                    type: string
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/deleteSubCategory/679546fb0cf67601daba66e2:
+    delete:
+      tags:
+        - Category
+      summary: delete Sub Category Based on SUB ID
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/deleteCategory/6795cf90c0495f5d62da383:
+    delete:
+      tags:
+        - Category
+      summary: delete Category by id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/getCategories:
+    get:
+      tags:
+        - Category
+      summary: get Category
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/getOnlyCategories:
+    get:
+      tags:
+        - Category
+      summary: get Only Categories
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/getSubCategories/6795cf90c0495f5d62da383c:
+    get:
+      tags:
+        - Category
+      summary: get SubCategories by Cat Id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/category/getSubCategoryById/6795c9bc0cf67601daba67f1:
+    get:
+      tags:
+        - Category
+      summary: get SubCategory by id
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/locations/popular:
+    get:
+      tags:
+        - Product
+      summary: State
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10000'
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: STATE
+        - name: lang
+          in: query
+          schema:
+            type: string
+          example: en-IN
+        - name: hideAddressCom
+          in: query
+          schema:
+            type: boolean
+          example: 'true'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/addCountries:
+    post:
+      tags:
+        - Location
+      summary: post states
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Check
+                description: House product
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/addCities:
+    post:
+      tags:
+        - Location
+      summary: post cities file Copy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Check
+                description: House product
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/addNeighbourHood:
+    post:
+      tags:
+        - Location
+      summary: addNeighbourHood
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Check
+                description: House product
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/getCountries:
+    get:
+      tags:
+        - Location
+      summary: get Countries
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/getFilteredLocations:
+    post:
+      tags:
+        - Location
+      summary: get location filter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                page: 1
+                limit: 10
+                sortField: name
+                sortOrder: desc
+                type: NEIGHBOURHOOD
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/getAllChildLocations:
+    post:
+      tags:
+        - Location
+      summary: get all child location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                parentLocationId: 4058732
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/searchLocation:
+    post:
+      tags:
+        - Location
+      summary: search location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                searchTerm: chowk
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/getLocationById:
+    post:
+      tags:
+        - Location
+      summary: get location by id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                locationId: 4404669
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/addLocation:
+    post:
+      tags:
+        - Location
+      summary: add location
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 12345
+                name: Test Location
+                type: CITY
+                parentId: 4404669
+                latitude: 12.9716
+                longitude: 77.5946
+                status: ACTIVE
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/location/updateLocation:
+    post:
+      tags:
+        - Location
+      summary: deletel ocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 12345
+                name: Test Location Update
+                type: INDIA
+                parentId: 4404669
+                latitude: 12.8521
+                longitude: 77.9654
+                status: ACTIVE
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjc5MjhkNDg0ODExNDYwMTg3NDZkYTVmIiwiYWRtaW5OYW1lIjoib2x4LW51c2FyYXQiLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlwQWRkcmVzcyI6Ijo6MSIsImlhdCI6MTczNzc0MTcyMiwiZXhwIjoxNzQwMzMzNzIyfQ.S5yVYOkwj-dJ8jOH99LkabGTa_9P6TGNwI-3VlN0R60
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/register-v2:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /userRoutes/uploadTest:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request Copy
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /uploadSingleCloud:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request Copy 3
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /uploadMultipleCloud:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request Copy 4
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /uploadMultipleFb:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request Copy 5
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /uploadSingleFb:
+    post:
+      tags:
+        - Image upload test
+      summary: New Request Copy 6
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NMV
+                email:
+                  type: string
+                  example: ancgfo@gmail.com
+                password:
+                  type: string
+                  example: Aa#123456789
+                phone:
+                  type: integer
+                  example: '9099213542'
+                profileImage:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /deleteFileFb/:
+    delete:
+      tags:
+        - Image upload test
+      summary: New Request Copy 8
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
